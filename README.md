@@ -2,7 +2,7 @@
 
 Nyancat rendered locally in your terminal.
 
-[![Nyancats](http://i.imgur.com/snCOQl.png)](http://i.imgur.com/snCOQ.png)
+[![Nyancat](http://i.imgur.com/VR3Ab7W.png)](http://i.imgur.com/VR3Ab7W.png)
 
 ## Build
 
@@ -27,8 +27,6 @@ Insert the compiled module:
 Cat the character device:
 
     cat /dev/nyancat
-
-[![Nyancat](http://i.imgur.com/VR3Ab7W.png)](http://i.imgur.com/VR3Ab7W.png)
 
 Use `cat` and `echo` to view and modify the 2 parameterst that control the output (`90` ms and `xterm` are the defaults):
 
