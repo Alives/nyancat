@@ -24,9 +24,13 @@ Insert the compiled module:
 
     sudo insmod nyancat_cdev_module.ko
 
-Cat the character device:
+## Use it
+
+cat the character device:
 
     cat /dev/nyancat
+
+## Configuration
 
 Use `cat` and `echo` to view and modify the 2 parameterst that control the output (`90` ms and `xterm` are the defaults):
 
