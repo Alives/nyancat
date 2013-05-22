@@ -1,14 +1,12 @@
 # Nyancat Character Device
 
-Nyancat rendered locally in your terminal.
+Nyancat rendered locally as a character device.
 
 [![Nyancat](http://i.imgur.com/VR3Ab7W.png)](http://i.imgur.com/VR3Ab7W.png)
 
 ## Build
 
-You will need to install the needed tools and libraries to build:
-
-First build the C application (these 2 are needed on ubuntu/debian):
+You will need to install the needed tools and libraries to build.  First build the module (these 2 dependencies are needed on ubuntu/debian):
 
     sudo apt-get install linux-headers-$(uname -r) build-essential
 
@@ -18,13 +16,13 @@ Compile the module:
 
 Copy the udev rule to the correct place (this creates the device node for you upon module insertion):
 
-  sudo cp etc/udev/rules.d/10-nyancat.rules /etc/udev/rules.d/10-nyancat.rules
+    sudo cp etc/udev/rules.d/10-nyancat.rules /etc/udev/rules.d/10-nyancat.rules
 
 Insert the compiled module:
 
     sudo insmod nyancat_cdev_module.ko
 
-## Use it
+## Use
 
 cat the character device:
 
@@ -34,12 +32,12 @@ cat the character device:
 
 Use `cat` and `echo` to view and modify the 2 parameterst that control the output (`90` ms and `xterm` are the defaults):
 
-    cat /proc/nyancat/delay_in_ms
+    > cat /proc/nyancat/delay_in_ms
     90
-    cat /proc/nyancat/term_type
+    > cat /proc/nyancat/term_type
     xterm
-    echo 250 > /proc/nyancat/delay_in_ms
-    echo vt220 > /proc/nyancat/term_type
+    > echo 250 > /proc/nyancat/delay_in_ms
+    > echo vt220 > /proc/nyancat/term_type
 
 Acceptable values for term_type are: `xterm`, `linux`, `vt220`, `fallback`, `rxvt`, and `default`.
 
