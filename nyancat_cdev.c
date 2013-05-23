@@ -205,7 +205,6 @@ static int term_write_proc(struct file* file, const char* buffer,
 }
 
 static struct file_operations nyancat_fops = {
-  .owner = THIS_MODULE,
   .open = nyancat_open,
   .read = nyancat_read,
   .release = nyancat_close,
@@ -311,7 +310,8 @@ static void nyancat_module_exit(void) {
 module_init(nyancat_module_init);
 module_exit(nyancat_module_exit);
 
-MODULE_AUTHOR("Elliott Friedman <elliott.friedman@gmail.com>");
-MODULE_DESCRIPTION("\"Nyancat cdev module");
-MODULE_LICENSE("GPL");
-MODULE_VERSION("1.0");
+/* MODULE_AUTHOR("Elliott Friedman <elliott.friedman@gmail.com>");
+ * MODULE_DESCRIPTION("\"Nyancat cdev module");
+ * MODULE_LICENSE("GPL");
+ * MODULE_VERSION("1.0");
+ */
